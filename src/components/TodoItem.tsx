@@ -2,21 +2,29 @@ import { Box, Button, Checkbox, Paper, Stack, TextField, Typography } from "@mui
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useState } from "react";
 
+//PROPS TYPES
 type PropsType = {
     todo: TodoItemType,
     completeHandler: (id: TodoItemType['id']) => void,
     deleteHandler: (id: TodoItemType['id']) => void,
     editHandler: (id: TodoItemType['id'], newTitle: TodoItemType['title']) => void,
 }
+
+
 const TodoItem = ({ todo, completeHandler, deleteHandler, editHandler }: PropsType) => {
+
+    //EDIT ACTIVATION
     const [editActive, setEditActive] = useState<Boolean>(false)
+
+    //EDIT TITLE
     const [textVal, setTextVal] = useState<string>(todo.title)
 
     return (
-        <Paper sx={
-            {
-                padding: '1rem'
-            }}>
+
+        //MUI PAPER COMPONENT
+        <Paper sx={{
+            padding: '1rem'
+        }}>
 
             <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
                 {

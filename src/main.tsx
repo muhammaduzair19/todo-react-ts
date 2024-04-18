@@ -8,9 +8,13 @@ import { CssBaseline } from '@mui/material'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+
+    {/* THEME PROVIDER */}
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
-        <App />
+
+      {/* BASIC CSS  */}
+      <CssBaseline />
+      <App />
     </ThemeProvider>
   </React.StrictMode>,
 )
